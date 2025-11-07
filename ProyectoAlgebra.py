@@ -63,7 +63,6 @@ def division_compleja(z1, z2):
     return NumeroComplejo(nuevo_r, nuevo_theta, modo='polar')
 
 def potencia_compleja(z, n):
-    # Potencia (De Moivre): z^n = r^n * (cos(n*theta) + i*sin(n*theta))
     nuevo_r = z.r ** n
     nuevo_theta = z.theta * n
     return NumeroComplejo(nuevo_r, nuevo_theta, modo='polar')
@@ -77,7 +76,6 @@ def raiz_compleja(z, n):
     raices = []
     nuevo_r = z.r ** (1/n) # La n-ésima raíz del módulo
     
-    # Fórmula de De Moivre para raíces
     for k in range(n):
         # (theta + 2*pi*k) / n
         nuevo_theta = (z.theta + 2 * math.pi * k) / n
@@ -121,7 +119,7 @@ def graficar_complejos(lista_z, titulo="Resultado en Plano de Argand"):
     Grafica una lista de números complejos en el plano de Argand.
     """
     plt.figure(figsize=(7, 7))
-    ax = plt.gca() # Get current axes
+    ax = plt.gca()
 
     lim_max = 0 # Para ajustar los límites del gráfico
 
@@ -244,7 +242,7 @@ def iniciar_calculadora():
 
         elif opcion == '0':
             # --- SALIR ---
-            print("¡Listo! No olvides hacer tu reporte. ¡Éxito!")
+            print("Adios!")
             break  # Rompe el bucle while True
             
         else:
